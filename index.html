@@ -12,7 +12,7 @@
             <a-asset-item id="wizard" src="fm-wizzard.gltf"></a-asset-item>
         </a-assets>
         <a-assets>
-            <a-asset-item id="headModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/examples/face-tracking/assets/sparkar/headOccluder.glb"></a-asset-item>
+            <a-asset-item id="headModel" src="headOccluder.glb"></a-asset-item>
         </a-assets>
         <a-entity mindar-face-target="anchorIndex: 168">
             <a-gltf-model mindar-face-occluder position="0 -0.3 0.15" rotation="0 0 0" scale="0.065 0.065 0.065" src="#headModel"></a-gltf-model>
@@ -20,9 +20,12 @@
         <a-entity mindar-face-target="anchorIndex: 1">
             <a-sphere color="green" radius="0.1"></a-sphere>
         </a-entity>
-        <a-entity mindar-face-target="anchorIndex: 1">
-            <a-gltf-model rotation="0 0 0" position="0 -1.6 -0.5" scale="0.45 0.45 0.45" src="#wizard"></a-gltf-model>
+        <a-entity mindar-face-target="anchorIndex: 168">
+            <a-glb-model  position="0 -0.3 0.15" rotation="0 0 0" scale="0.065 0.065 0.065" src="#headModel"></a-glb-model>
         </a-entity>
+        <!--<a-entity mindar-face-target="anchorIndex: 1">
+            <a-gltf-model rotation="0 0 0" position="0 -1.6 -0.5" scale="0.45 0.45 0.45" src="#wizard"></a-gltf-model>
+        </a-entity>-->
 
     </a-scene>
 </body>
