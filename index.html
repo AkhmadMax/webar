@@ -1,24 +1,68 @@
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-face.prod.js"></script>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-face-aframe.prod.js"></script>
-</head>
-<body>
-    <a-scene mindar-face embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
-        <a-assets>
-            <a-asset-item id="glassesModel" src="fm-wizzard.gltf"></a-asset-item>
-            <a-asset-item id="headModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/examples/face-tracking/assets/sparkar/headOccluder.glb"></a-asset-item>
-        </a-assets>
+<!doctype html>
+<html lang="en">
 
-        <a-camera active="false" position="0 0 0"></a-camera>
-        <a-entity mindar-face-target="anchorIndex: 168">
-            <a-gltf-model mindar-face-occluder position="0 -0.3 0.15" rotation="0 0 0" scale="0.065 0.065 0.065" src="#headModel"></a-gltf-model>
-        </a-entity>
-        <a-entity mindar-face-target="anchorIndex: 168">
-            <a-gltf-model rotation="0 0 0" position="0 -2.0 -0.5" scale="0.45 0.45 0.45" src="#glassesModel"></a-gltf-model>
-        </a-entity>
-    </a-scene>
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./favicon.png" />
+    <meta name="viewport" content="width=device-width,initial-scale=0.5" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="WebAR built with MindAR Studio" />
+    <link rel="apple-touch-icon" href="./favicon.png" />
+    <link rel="manifest" href="./manifest.json" />
+    <title>MindAR App</title>
+    <script defer="defer" src="./static/js/main.1573730f.js"></script>
+    <link href="./static/css/main.43335a5b.css" rel="stylesheet">
+
+
+    <style>
+        #container {
+            background-image: url("images/sea-sd.jpg");
+            background-size:     cover;                   
+            background-repeat:   no-repeat;
+            background-position: center center;   
+
+            width: 100%;
+            height: 100%;
+        }
+
+        #window {
+            border-radius: 25px;
+            display: block;
+            top: 50%;
+            left: 50%;
+            width: 50%;
+            height: 100%;
+            box-sizing: border-box;
+            border: 1cm;
+            transform: translate(-50%, -50%);
+            background-color: #b9faac;
+            position: fixed;
+            overflow: hidden;
+            margin: 1rem;
+        }
+
+        #qr {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+        }
+
+        .mask-link {
+            position: float;
+        }
+    </style>
+
+</head>
+
+<body><noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="container">
+        <div id="window">
+            <div id="root"></div>
+        </div>
+        <div id="qr">
+            <image src="images/qr.png">
+        </div>
+    </div>
 </body>
+
 </html>
