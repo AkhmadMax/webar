@@ -11,6 +11,9 @@
 
     <script>
         $(document).ready( function() {
+
+            $("#window").load("wizard/index.html");
+
             $("#load-wizard").on("click", function() {
                 $("#window").load("wizard/index.html");
             });
@@ -37,10 +40,10 @@
             top: 50%;
             left: 50%;
             width: 50%;
-            height: 100%;
+            height: 95%;
             box-sizing: border-box;
             border: 1cm;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, -52%);
             background-color: #b9faac;
             position: fixed;
             overflow: hidden;
@@ -63,8 +66,9 @@
 <body><noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="container">
         <div>
-            <a href ="#" id="load-wizard"> WIZARD </a>
-            <a href ="#" id="load-queen"> QUEEN </a>
+            <a href ="#" id="load-wizard">WIZARD</a>
+            <br>
+            <a href ="#" id="load-queen">QUEEN</a>
         </div>
         <div id="window">
 
